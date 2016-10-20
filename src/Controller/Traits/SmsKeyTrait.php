@@ -49,7 +49,7 @@ trait SmsKeyTrait
      * @param Array $user user
      * @return void
      */
-    public function renewSmsKey(Array $user)
+    public function renewSmsKey($user)
     {
         $secret = (string) rand(100000 , 999999); // switch this to random_int when using php7
         
@@ -87,7 +87,7 @@ trait SmsKeyTrait
      * @param string $message complete message
      * @return boolean true on sucess
      */
-    protected function _sendSms(string $to, string $message)
+    protected function _sendSms($to, $message)
     {
         $http = new Client();
         $config = Configure::read('Users.SmsKey.SmsConfig');
