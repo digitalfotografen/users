@@ -51,7 +51,7 @@ trait SmsKeyTrait
      */
     public function renewSmsKey(Array $user)
     {
-        $secret = (string) random_int(100000 , 999999);
+        $secret = (string) rand(100000 , 999999); // switch this to random_int when using php7
         
         if (empty($user) || empty($user['sms'])){
             $message = __d('CakeDC/Users', 'Missing SMS number for this user');
