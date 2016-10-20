@@ -162,7 +162,12 @@ trait LoginTrait
 
                 return;
             }
+
             $user = $this->Auth->identify();
+
+            if (!empty($user) && $this->_checkSmsKey($user)) {
+                return $this->redirect(['action' => 'smskey']);
+            }
 
             return $this->_afterIdentifyUser($user, $socialLogin);
         }
@@ -192,6 +197,24 @@ trait LoginTrait
             $this->request->data('g-recaptcha-response'),
             $this->request->clientIp()
         );
+    }
+
+    /**
+     * Check if sms key enabled for login
+     * If active, renew sms key
+     *
+     * @return bool
+     */
+    protected function _checkSmsKey(Array $user)
+    {
+        if (!Configure::read('Users.SmsKey.active')) {
+            return false;
+        }
+        
+        $this->renewSmsKey(
+            $user
+        );
+        return true;
     }
 
     /**

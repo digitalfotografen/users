@@ -94,6 +94,16 @@ $config = [
                 ]
             ]
         ],
+        'SmsKey' => [
+            'active' => false,
+            'SmsConfig' => [
+                'url' => 'https://api.46elks.com/a1/SMS',
+                'api_username' => 'xxxxxx',
+                'api_password' => 'xxxx',
+                'from' => 'number or name',
+                'flashsms' => 'no', // no or yes
+            ],
+        ],
     ],
     //default configuration used to auto-load the Auth Component, override to change the way Auth works
     'Auth' => [

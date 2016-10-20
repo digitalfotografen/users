@@ -19,6 +19,7 @@ use CakeDC\Users\Controller\Traits\ReCaptchaTrait;
 use CakeDC\Users\Controller\Traits\RegisterTrait;
 use CakeDC\Users\Controller\Traits\SimpleCrudTrait;
 use CakeDC\Users\Controller\Traits\SocialTrait;
+use CakeDC\Users\Controller\Traits\SmsKeyTrait;
 use CakeDC\Users\Model\Table\UsersTable;
 use Cake\Core\Configure;
 use Cake\ORM\Table;
@@ -36,4 +37,5 @@ class UsersController extends AppController
     use RegisterTrait;
     use SimpleCrudTrait;
     use SocialTrait;
+    use SmsKeyTrait;
 }
