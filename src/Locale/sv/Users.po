@@ -4,25 +4,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Users\n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2016-10-20 10:07+0200\n"
-"PO-Revision-Date: 2016-10-20 10:14+0200\n"
-=======
-"POT-Creation-Date: 2016-10-26 11:24+0200\n"
-"PO-Revision-Date: 2016-10-26 11:30+0200\n"
->>>>>>> master
+"POT-Creation-Date: 2016-10-26 12:30+0200\n"
+"PO-Revision-Date: \n"
 "Last-Translator: Ulrik Södergren <ulrik@digitalfotografen.se>\n"
 "Language-Team: CakeDC <contact@cakedc.com>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-<<<<<<< HEAD
-"X-Generator: Poedit 1.8.10\n"
-=======
 "X-Generator: Poedit 1.8.11\n"
->>>>>>> master
 
 #: Auth/ApiKeyAuthenticate.php:73
 msgid "Type {0} is not valid"
@@ -52,13 +42,8 @@ msgid ""
 "Table alias is empty, please define a table alias, we could not extract a "
 "default table from the request"
 msgstr ""
-<<<<<<< HEAD
-"Tabellalias är tomt, var vänlig ange en tabellalias, vi kunde inte extrahera "
-"någon standardtabellen från begäran"
-=======
 "Tabellalias är tomt, var vänlig ange ett tabellalias, vi kunde inte "
 "extrahera någon standardtabell"
->>>>>>> master
 
 #: Auth/Rules/Owner.php:67;70
 msgid ""
@@ -107,7 +92,7 @@ msgstr "E-post kunde inte skickas om"
 #: Controller/Component/RememberMeComponent.php:69
 msgid "Invalid app salt, app salt must be at least 256 bits (32 bytes) long"
 msgstr ""
-"Ogiltig app salt, måste app salt vara åtminstone 256 bitar (32 byte) långt"
+"Ogiltig app salt, app salt måste vara åtminstone 256 bitar (32 byte) långt"
 
 #: Controller/Component/UsersAuthComponent.php:178
 msgid "You can't enable email validation workflow if use_email is false"
@@ -135,14 +120,13 @@ msgid ""
 "Your social account has not been validated yet. Please check your inbox for "
 "instructions"
 msgstr ""
-"Din sociala hänsyn har inte validerats ännu. Vänligen kontrollera din inbox "
-"för instruktioner"
+"Ditt sociala konto har inte validerats ännu. Kontrollera din inkorg för "
+"instruktioner"
 
 #: Controller/Traits/LoginTrait.php:161 Controller/Traits/RegisterTrait.php:81
 msgid "Invalid reCaptcha"
 msgstr "Ogiltig reCaptcha"
 
-<<<<<<< HEAD
 #: Controller/Traits/LoginTrait.php:176
 msgid "You are already logged in"
 msgstr "Du är redan inloggad."
@@ -152,28 +136,13 @@ msgid "Username or password is incorrect"
 msgstr "Användarnamn eller lösenord är felaktigt"
 
 #: Controller/Traits/LoginTrait.php:261
-=======
-#: Controller/Traits/LoginTrait.php:171
-msgid "You are already logged in"
-msgstr "Du är redan inloggad."
-
-#: Controller/Traits/LoginTrait.php:217
-msgid "Username or password is incorrect"
-msgstr "Användarnamn eller lösenord är felaktigt"
-
-#: Controller/Traits/LoginTrait.php:238
->>>>>>> master
 msgid "You've successfully logged out"
 msgstr "Du har loggats ut"
 
 #: Controller/Traits/PasswordManagementTrait.php:47;76
 #: Controller/Traits/ProfileTrait.php:49
 msgid "User was not found"
-<<<<<<< HEAD
-msgstr "Användaren hittades inte."
-=======
 msgstr "Användaren hittades inte"
->>>>>>> master
 
 #: Controller/Traits/PasswordManagementTrait.php:64;72;80
 msgid "Password could not be changed"
@@ -275,7 +244,7 @@ msgstr "Användaren redan aktiv"
 
 #: Controller/Traits/UserValidationTrait.php:53
 msgid "Reset password token was validated successfully"
-msgstr "Återställning av lösenord lyckades."
+msgstr "Återställ lösenords token validerades framgångsrikt"
 
 #: Controller/Traits/UserValidationTrait.php:58
 msgid "Reset password token could not be validated"
@@ -299,7 +268,7 @@ msgstr "Token har återställts. Kontrollera din e-post."
 
 #: Controller/Traits/UserValidationTrait.php:102
 msgid "User {0} is already active"
-msgstr "Användaren {0} är redan aktiv"
+msgstr "AnvÃ¤ndaren {0} Ã¤r redan aktiv"
 
 #: Email/EmailSender.php:39
 msgid "Your account validation link"
@@ -311,7 +280,7 @@ msgstr "{0} Din länk för att återställa lösenord"
 
 #: Mailer/UsersMailer.php:78
 msgid "{0}Your social account validation link"
-msgstr "{0} Din sociala konto svalideringslänk"
+msgstr "{0} Ditt sociala konto svalideringslänk"
 
 #: Model/Behavior/PasswordBehavior.php:56
 msgid "Reference cannot be null"
@@ -333,25 +302,14 @@ msgstr "Kontot är redan aktiverat!"
 #: Model/Behavior/PasswordBehavior.php:78
 msgid "User not active"
 msgstr "Användaren ej aktiv"
-<<<<<<< HEAD
 
 #: Model/Behavior/PasswordBehavior.php:121
 msgid "The current password does not match"
-msgstr "Den nuvarande lösenord matchar inte"
-
-#: Model/Behavior/PasswordBehavior.php:124
-msgid "You cannot use the current password as the new one"
-msgstr "Du kan inte använda det aktuella lösenordet som den nya"
-=======
-
-#: Model/Behavior/PasswordBehavior.php:121
-msgid "The current password does not match"
-msgstr "Den nuvarande lösenord matchar inte"
+msgstr "Nuvarande lösenord matchar inte"
 
 #: Model/Behavior/PasswordBehavior.php:124
 msgid "You cannot use the current password as the new one"
 msgstr "Du kan inte använda det aktuella lösenordet som det nya"
->>>>>>> master
 
 #: Model/Behavior/RegisterBehavior.php:89
 msgid "User not found for the given token and email."
@@ -391,11 +349,7 @@ msgstr "E-postadressen finns redan"
 
 #: Model/Table/UsersTable.php:214
 msgid "Missing 'username' in options data"
-<<<<<<< HEAD
 msgstr "Saknas \"username\" i alternativa uppgifter"
-=======
-msgstr "Saknas 'username' i alternativa uppgifter"
->>>>>>> master
 
 #: Shell/UsersShell.php:54
 msgid "Utilities for CakeDC Users Plugin"
@@ -407,11 +361,11 @@ msgstr "Aktivera en specifik användare"
 
 #: Shell/UsersShell.php:56
 msgid "Add a new superadmin user for testing purposes"
-msgstr "Lägga till en ny superadmin användare för teständamål"
+msgstr "Lägga till en ny superadmin-användare för teständamål"
 
 #: Shell/UsersShell.php:57
 msgid "Add a new user"
-msgstr "Ny användare"
+msgstr "Ny anvÃ¤ndare"
 
 #: Shell/UsersShell.php:58
 msgid "Change the role for an specific user"
@@ -423,7 +377,7 @@ msgstr "Inaktivare en specifik användare"
 
 #: Shell/UsersShell.php:60
 msgid "Delete an specific user"
-msgstr "Ta bort en specifik användare"
+msgstr "Ta bort en specifik anvÃ¤ndare"
 
 #: Shell/UsersShell.php:61
 msgid "Reset the password via email"
@@ -467,7 +421,7 @@ msgstr "Superanvändaren kunde inte läggas till:"
 
 #: Shell/UsersShell.php:135
 msgid "Field: {0} Error: {1}"
-msgstr "Fält: {0} fel: {1}"
+msgstr "Fält: {0} Fel: {1}"
 
 #: Shell/UsersShell.php:153;179
 msgid "Please enter a password."
@@ -483,7 +437,7 @@ msgstr "Nytt lösenord: {0}"
 
 #: Shell/UsersShell.php:176;204;282;324
 msgid "Please enter a username."
-msgstr "Ange ett användarnamn"
+msgstr "Ange ett användarnamn."
 
 #: Shell/UsersShell.php:185
 msgid "Password changed for user: {0}"
@@ -531,7 +485,7 @@ msgstr "Användaren {0} raderades ej. Var god försök igen"
 
 #: Shell/UsersShell.php:334
 msgid "The user {0} was deleted successfully"
-msgstr "Användaren {0} har tagits bort"
+msgstr "Användaren {0} har raderats"
 
 #: Template/Email/html/reset_password.ctp:21
 #: Template/Email/html/social_account_validation.ctp:14
@@ -594,7 +548,7 @@ msgstr ""
 "inloggning {0}"
 
 #: Template/Users/add.ctp:13 Template/Users/edit.ctp:15
-#: Template/Users/index.ctp:13;26 Template/Users/view.ctp:15;79
+#: Template/Users/index.ctp:13;27 Template/Users/view.ctp:15;81
 msgid "Actions"
 msgstr "Resurser"
 
@@ -612,13 +566,9 @@ msgstr "Lista konton"
 msgid "Add User"
 msgstr "Ny användare"
 
-<<<<<<< HEAD
-#: Template/Users/add.ctp:32 Template/Users/change_password.ctp:17
-#: Template/Users/edit.ctp:47 Template/Users/register.ctp:32
-=======
 #: Template/Users/add.ctp:24 Template/Users/edit.ctp:35
 #: Template/Users/index.ctp:22 Template/Users/profile.ctp:27
-#: Template/Users/register.ctp:18 Template/Users/view.ctp:30;70
+#: Template/Users/register.ctp:18 Template/Users/view.ctp:30;72
 msgid "Username"
 msgstr "Användarnamn"
 
@@ -638,14 +588,18 @@ msgstr "Förnamn"
 msgid "Last name"
 msgstr "Efternamn"
 
-#: Template/Users/add.ctp:30 Template/Users/edit.ctp:53
-#: Template/Users/view.ctp:44;75
+#: Template/Users/add.ctp:28 Template/Users/edit.ctp:39
+#: Template/Users/register.ctp:27
+msgid "Sms number"
+msgstr "SMS-nummer"
+
+#: Template/Users/add.ctp:31 Template/Users/edit.ctp:54
+#: Template/Users/view.ctp:46;77
 msgid "Active"
 msgstr "Aktivt"
 
-#: Template/Users/add.ctp:34 Template/Users/change_password.ctp:25
-#: Template/Users/edit.ctp:57 Template/Users/register.ctp:35
->>>>>>> master
+#: Template/Users/add.ctp:35 Template/Users/change_password.ctp:25
+#: Template/Users/edit.ctp:58 Template/Users/register.ctp:36
 #: Template/Users/request_reset_password.ctp:8
 #: Template/Users/resend_token_validation.ctp:20
 #: Template/Users/social_email.ctp:19
@@ -660,8 +614,6 @@ msgstr "Ange ditt nya lösenord"
 msgid "Current password"
 msgstr "Nuvarande lösenord"
 
-<<<<<<< HEAD
-=======
 #: Template/Users/change_password.ctp:16
 msgid "New password"
 msgstr "Nytt lösenord"
@@ -670,38 +622,37 @@ msgstr "Nytt lösenord"
 msgid "Confirm password"
 msgstr "Bekräfta lösenord"
 
->>>>>>> master
-#: Template/Users/edit.ctp:20 Template/Users/index.ctp:40
-#: Template/Users/view.ctp:101
+#: Template/Users/edit.ctp:20 Template/Users/index.ctp:42
+#: Template/Users/view.ctp:103
 msgid "Delete"
 msgstr "Radera"
 
-#: Template/Users/edit.ctp:22 Template/Users/index.ctp:40
-#: Template/Users/view.ctp:18;101
+#: Template/Users/edit.ctp:22 Template/Users/index.ctp:42
+#: Template/Users/view.ctp:18;103
 msgid "Are you sure you want to delete # {0}?"
-msgstr "Är du säker på att du vill radera{0}"
+msgstr "Är du säker på att du vill radera # {0}?"
 
 #: Template/Users/edit.ctp:33 Template/Users/view.ctp:17
 msgid "Edit User"
 msgstr "Redigera användare"
 
-#: Template/Users/edit.ctp:39 Template/Users/view.ctp:38;73
+#: Template/Users/edit.ctp:40 Template/Users/view.ctp:40;75
 msgid "Token"
 msgstr "Token"
 
-#: Template/Users/edit.ctp:41
+#: Template/Users/edit.ctp:42
 msgid "Token expires"
 msgstr "Token förfaller"
 
-#: Template/Users/edit.ctp:44
+#: Template/Users/edit.ctp:45
 msgid "API token"
 msgstr "API-token"
 
-#: Template/Users/edit.ctp:47
+#: Template/Users/edit.ctp:48
 msgid "Activation date"
 msgstr "Aktiveringsdatum"
 
-#: Template/Users/edit.ctp:50
+#: Template/Users/edit.ctp:51
 msgid "TOS date"
 msgstr "TOS datum"
 
@@ -709,23 +660,28 @@ msgstr "TOS datum"
 msgid "New {0}"
 msgstr "Nytt {0}"
 
-#: Template/Users/index.ctp:37 Template/Users/view.ctp:97
+#: Template/Users/index.ctp:26 Template/Users/profile.ctp:31
+#: Template/Users/view.ctp:38
+msgid "SMS number"
+msgstr "SMS-nummer"
+
+#: Template/Users/index.ctp:39 Template/Users/view.ctp:99
 msgid "View"
 msgstr "Visa"
 
-#: Template/Users/index.ctp:38
+#: Template/Users/index.ctp:40
 msgid "Change password"
 msgstr "Byt lösenord"
 
-#: Template/Users/index.ctp:39 Template/Users/view.ctp:99
+#: Template/Users/index.ctp:41 Template/Users/view.ctp:101
 msgid "Edit"
-msgstr "Ändra"
+msgstr "Ãndra"
 
-#: Template/Users/index.ctp:49
+#: Template/Users/index.ctp:51
 msgid "previous"
 msgstr "föregående"
 
-#: Template/Users/index.ctp:51
+#: Template/Users/index.ctp:53
 msgid "next"
 msgstr "nästa"
 
@@ -745,11 +701,7 @@ msgstr "Registrera"
 msgid "Reset Password"
 msgstr "Återställ Lösenord"
 
-<<<<<<< HEAD
 #: Template/Users/login.ctp:48 Template/Users/smskey.ctp:25
-=======
-#: Template/Users/login.ctp:48
->>>>>>> master
 msgid "Login"
 msgstr "Logga in"
 
@@ -761,34 +713,23 @@ msgstr "{0} {1}"
 msgid "Change Password"
 msgstr "Ändra Lösenord"
 
-<<<<<<< HEAD
-#: Template/Users/profile.ctp:27 Template/Users/view.ctp:30;70
-msgid "Username"
-msgstr "Användarnamn"
-
-#: Template/Users/profile.ctp:29 Template/Users/view.ctp:32
-msgid "Email"
-msgstr "Epost"
-
-=======
->>>>>>> master
-#: Template/Users/profile.ctp:34
+#: Template/Users/profile.ctp:36
 msgid "Social Accounts"
 msgstr "Sociala konton"
 
-#: Template/Users/profile.ctp:38 Template/Users/view.ctp:72
+#: Template/Users/profile.ctp:40 Template/Users/view.ctp:74
 msgid "Avatar"
 msgstr "Profilbild"
 
-#: Template/Users/profile.ctp:39 Template/Users/view.ctp:69
+#: Template/Users/profile.ctp:41 Template/Users/view.ctp:71
 msgid "Provider"
-msgstr "Utförare"
+msgstr "Tillhandahålls av"
 
-#: Template/Users/profile.ctp:40
+#: Template/Users/profile.ctp:42
 msgid "Link"
 msgstr "Länk"
 
-#: Template/Users/profile.ctp:47
+#: Template/Users/profile.ctp:49
 msgid "Link to {0}"
 msgstr "Länk till {0}"
 
@@ -796,7 +737,7 @@ msgstr "Länk till {0}"
 msgid "Password"
 msgstr "Lösenord"
 
-#: Template/Users/register.ctp:28
+#: Template/Users/register.ctp:29
 msgid "Accept TOS conditions?"
 msgstr "Jag accepterar villkoren"
 
@@ -812,7 +753,6 @@ msgstr "Skicka nytt bekräftelsemejl"
 msgid "Email or username"
 msgstr "E-post/Användarnamn"
 
-<<<<<<< HEAD
 #: Template/Users/smskey.ctp:19
 msgid "Please enter sms key"
 msgstr "Ange sms-nyckel"
@@ -821,8 +761,6 @@ msgstr "Ange sms-nyckel"
 msgid "Resend SMS key"
 msgstr "Skicka ny SMS-nyckel"
 
-=======
->>>>>>> master
 #: Template/Users/view.ctp:18
 msgid "Delete User"
 msgstr "Ta bort användare"
@@ -831,7 +769,7 @@ msgstr "Ta bort användare"
 msgid "New User"
 msgstr "Ny användare"
 
-#: Template/Users/view.ctp:28;67
+#: Template/Users/view.ctp:28;69
 msgid "Id"
 msgstr "Id"
 
@@ -843,57 +781,43 @@ msgstr "Förnamn"
 msgid "Last Name"
 msgstr "Efternamn"
 
-<<<<<<< HEAD
-#: Template/Users/view.ctp:38;73
-msgid "Token"
-msgstr "Token"
-
-=======
->>>>>>> master
-#: Template/Users/view.ctp:40
+#: Template/Users/view.ctp:42
 msgid "Api Token"
 msgstr "Api-token"
 
-<<<<<<< HEAD
-#: Template/Users/view.ctp:44;75
-msgid "Active"
-msgstr "Aktivt"
-
-=======
->>>>>>> master
-#: Template/Users/view.ctp:48;74
+#: Template/Users/view.ctp:50;76
 msgid "Token Expires"
 msgstr "Token förfaller"
 
-#: Template/Users/view.ctp:50
+#: Template/Users/view.ctp:52
 msgid "Activation Date"
 msgstr "Aktiveringsdatum"
 
-#: Template/Users/view.ctp:52
+#: Template/Users/view.ctp:54
 msgid "Tos Date"
 msgstr "Tos datum"
 
-#: Template/Users/view.ctp:54;77
+#: Template/Users/view.ctp:56;79
 msgid "Created"
 msgstr "Skapad"
 
-#: Template/Users/view.ctp:56;78
+#: Template/Users/view.ctp:58;80
 msgid "Modified"
-msgstr "Ändrad"
+msgstr "Ãndrad"
 
-#: Template/Users/view.ctp:63
+#: Template/Users/view.ctp:65
 msgid "Related Accounts"
 msgstr "Relaterade konton"
 
-#: Template/Users/view.ctp:68
+#: Template/Users/view.ctp:70
 msgid "User Id"
 msgstr "Användar-ID"
 
-#: Template/Users/view.ctp:71
+#: Template/Users/view.ctp:73
 msgid "Reference"
 msgstr "Referens"
 
-#: Template/Users/view.ctp:76
+#: Template/Users/view.ctp:78
 msgid "Data"
 msgstr "Data"
 
@@ -921,31 +845,28 @@ msgstr "Välkommen, {0}"
 msgid "reCaptcha is not configured! Please configure Users.reCaptcha.key"
 msgstr "reCaptcha är inte konfigurerad! Konfigurera Users.reCaptcha.key"
 
-<<<<<<< HEAD
 #: Controller/Traits/SmsKeyTrait.php:69
 msgid "{0} SMS-key: {1}"
 msgstr "{0} SMS-nyckel: {1}"
 
-=======
->>>>>>> master
 #: Model/Behavior/RegisterBehavior.php:148
 msgid "This field is required"
 msgstr "Detta fält är obligatoriskt"
 
 #~ msgid "The old password does not match"
-#~ msgstr "Det gamla lösenordet stämmer inte"
+#~ msgstr "Det gamla lÃ¶senordet stÃ¤mmer inte"
 
 #~ msgid "SocialAccount already active"
 #~ msgstr "SocialAccount redan aktivt"
 
 #~ msgid "There was an error associating your social network account"
-#~ msgstr "Det gick inte att associera ditt sociala nätverkskonto"
+#~ msgstr "Det gick inte att associera ditt sociala nÃ¤tverkskonto"
 
 #~ msgid "Invalid token and/or email"
 #~ msgstr "Ogiltig token och / eller epost"
 
 #~ msgid "The \"tos\" property is not present"
-#~ msgstr "\"tos\" fältet saknas"
+#~ msgstr "\"tos\" fÃ¤ltet saknas"
 
 #~ msgid "+ {0} secs"
 #~ msgstr "{0} sek"

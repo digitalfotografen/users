@@ -23,6 +23,7 @@
             <th><?= $this->Paginator->sort('email', __d('CakeDC/Users', 'Email')) ?></th>
             <th><?= $this->Paginator->sort('first_name', __d('CakeDC/Users', 'First name')) ?></th>
             <th><?= $this->Paginator->sort('last_name', __d('CakeDC/Users', 'Last name')) ?></th>
+            <th><?= $this->Paginator->sort('sms', __d('CakeDC/Users', 'SMS number')) ?></th>
             <th class="actions"><?= __d('CakeDC/Users', 'Actions') ?></th>
         </tr>
     </thead>
@@ -33,6 +34,7 @@
             <td><?= h($user->email) ?></td>
             <td><?= h($user->first_name) ?></td>
             <td><?= h($user->last_name) ?></td>
+            <td><?= h($user->sms) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__d('CakeDC/Users', 'View'), ['action' => 'view', $user->id]) ?>
                 <?= $this->Html->link(__d('CakeDC/Users', 'Change password'), ['action' => 'changePassword', $user->id]) ?>

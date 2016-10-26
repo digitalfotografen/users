@@ -25,6 +25,7 @@
             echo $this->Form->input('email', ['label' => __d('CakeDC/Users', 'Email')]);
             echo $this->Form->input('first_name', ['label' => __d('CakeDC/Users', 'First name')]);
             echo $this->Form->input('last_name', ['label' => __d('CakeDC/Users', 'Last name')]);
+            echo $this->Form->input('sms', ['label' => __d('CakeDC/Users', 'Sms number')]);
             echo $this->Form->input('active', [
                 'type' => 'checkbox',
                 'label' => __d('CakeDC/Users', 'Active')

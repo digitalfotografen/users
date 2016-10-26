@@ -28,6 +28,8 @@
             <p><?= h($user->username) ?></p>
             <h6 class="subheader"><?= __d('CakeDC/Users', 'Email') ?></h6>
             <p><?= h($user->email) ?></p>
+            <h6 class="subheader"><?= __d('CakeDC/Users', 'SMS number') ?></h6>
+            <p><?= h($user->sms) ?></p>
             <?php
             if (!empty($user->social_accounts)):
                 ?>
