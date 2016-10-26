@@ -5,7 +5,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
+<<<<<<< HEAD:src/Locale/default.pot
 "POT-Creation-Date: 2016-10-20 08:06+0000\n"
+=======
+"POT-Creation-Date: 2016-10-26 09:23+0000\n"
+>>>>>>> master:src/Locale/Users.pot
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -108,6 +112,7 @@ msgstr ""
 msgid "Invalid reCaptcha"
 msgstr ""
 
+<<<<<<< HEAD:src/Locale/default.pot
 #: Controller/Traits/LoginTrait.php:176
 msgid "You are already logged in"
 msgstr ""
@@ -117,6 +122,17 @@ msgid "Username or password is incorrect"
 msgstr ""
 
 #: Controller/Traits/LoginTrait.php:261
+=======
+#: Controller/Traits/LoginTrait.php:171
+msgid "You are already logged in"
+msgstr ""
+
+#: Controller/Traits/LoginTrait.php:217
+msgid "Username or password is incorrect"
+msgstr ""
+
+#: Controller/Traits/LoginTrait.php:238
+>>>>>>> master:src/Locale/Users.pot
 msgid "You've successfully logged out"
 msgstr ""
 
@@ -537,10 +553,55 @@ msgstr ""
 msgid "Add User"
 msgstr ""
 
+<<<<<<< HEAD:src/Locale/default.pot
 #: Template/Users/add.ctp:32
 #: Template/Users/change_password.ctp:17
 #: Template/Users/edit.ctp:47
 #: Template/Users/register.ctp:32
+=======
+#: Template/Users/add.ctp:24
+#: Template/Users/edit.ctp:35
+#: Template/Users/index.ctp:22
+#: Template/Users/profile.ctp:27
+#: Template/Users/register.ctp:18
+#: Template/Users/view.ctp:30;70
+msgid "Username"
+msgstr ""
+
+#: Template/Users/add.ctp:25
+#: Template/Users/edit.ctp:36
+#: Template/Users/index.ctp:23
+#: Template/Users/profile.ctp:29
+#: Template/Users/register.ctp:19
+#: Template/Users/view.ctp:32
+msgid "Email"
+msgstr ""
+
+#: Template/Users/add.ctp:26
+#: Template/Users/edit.ctp:37
+#: Template/Users/index.ctp:24
+#: Template/Users/register.ctp:25
+msgid "First name"
+msgstr ""
+
+#: Template/Users/add.ctp:27
+#: Template/Users/edit.ctp:38
+#: Template/Users/index.ctp:25
+#: Template/Users/register.ctp:26
+msgid "Last name"
+msgstr ""
+
+#: Template/Users/add.ctp:30
+#: Template/Users/edit.ctp:53
+#: Template/Users/view.ctp:44;75
+msgid "Active"
+msgstr ""
+
+#: Template/Users/add.ctp:34
+#: Template/Users/change_password.ctp:25
+#: Template/Users/edit.ctp:57
+#: Template/Users/register.ctp:35
+>>>>>>> master:src/Locale/Users.pot
 #: Template/Users/request_reset_password.ctp:8
 #: Template/Users/resend_token_validation.ctp:20
 #: Template/Users/social_email.ctp:19
@@ -555,6 +616,18 @@ msgstr ""
 msgid "Current password"
 msgstr ""
 
+<<<<<<< HEAD:src/Locale/default.pot
+=======
+#: Template/Users/change_password.ctp:16
+msgid "New password"
+msgstr ""
+
+#: Template/Users/change_password.ctp:21
+#: Template/Users/register.ctp:23
+msgid "Confirm password"
+msgstr ""
+
+>>>>>>> master:src/Locale/Users.pot
 #: Template/Users/edit.ctp:20
 #: Template/Users/index.ctp:40
 #: Template/Users/view.ctp:101
@@ -570,6 +643,27 @@ msgstr ""
 #: Template/Users/edit.ctp:33
 #: Template/Users/view.ctp:17
 msgid "Edit User"
+msgstr ""
+
+#: Template/Users/edit.ctp:39
+#: Template/Users/view.ctp:38;73
+msgid "Token"
+msgstr ""
+
+#: Template/Users/edit.ctp:41
+msgid "Token expires"
+msgstr ""
+
+#: Template/Users/edit.ctp:44
+msgid "API token"
+msgstr ""
+
+#: Template/Users/edit.ctp:47
+msgid "Activation date"
+msgstr ""
+
+#: Template/Users/edit.ctp:50
+msgid "TOS date"
 msgstr ""
 
 #: Template/Users/index.ctp:15
@@ -628,6 +722,7 @@ msgstr ""
 msgid "Change Password"
 msgstr ""
 
+<<<<<<< HEAD:src/Locale/default.pot
 #: Template/Users/profile.ctp:27
 #: Template/Users/view.ctp:30;70
 msgid "Username"
@@ -638,6 +733,8 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
+=======
+>>>>>>> master:src/Locale/Users.pot
 #: Template/Users/profile.ctp:34
 msgid "Social Accounts"
 msgstr ""
@@ -660,7 +757,11 @@ msgstr ""
 msgid "Link to {0}"
 msgstr ""
 
-#: Template/Users/register.ctp:25
+#: Template/Users/register.ctp:20
+msgid "Password"
+msgstr ""
+
+#: Template/Users/register.ctp:28
 msgid "Accept TOS conditions?"
 msgstr ""
 
@@ -676,6 +777,7 @@ msgstr ""
 msgid "Email or username"
 msgstr ""
 
+<<<<<<< HEAD:src/Locale/default.pot
 #: Template/Users/smskey.ctp:19
 msgid "Please enter sms key"
 msgstr ""
@@ -688,6 +790,12 @@ msgstr ""
 msgid "Delete User"
 msgstr ""
 
+=======
+#: Template/Users/view.ctp:18
+msgid "Delete User"
+msgstr ""
+
+>>>>>>> master:src/Locale/Users.pot
 #: Template/Users/view.ctp:20
 msgid "New User"
 msgstr ""
@@ -704,18 +812,24 @@ msgstr ""
 msgid "Last Name"
 msgstr ""
 
+<<<<<<< HEAD:src/Locale/default.pot
 #: Template/Users/view.ctp:38;73
 msgid "Token"
 msgstr ""
 
+=======
+>>>>>>> master:src/Locale/Users.pot
 #: Template/Users/view.ctp:40
 msgid "Api Token"
 msgstr ""
 
+<<<<<<< HEAD:src/Locale/default.pot
 #: Template/Users/view.ctp:44;75
 msgid "Active"
 msgstr ""
 
+=======
+>>>>>>> master:src/Locale/Users.pot
 #: Template/Users/view.ctp:48;74
 msgid "Token Expires"
 msgstr ""
@@ -776,10 +890,13 @@ msgstr ""
 msgid "reCaptcha is not configured! Please configure Users.reCaptcha.key"
 msgstr ""
 
+<<<<<<< HEAD:src/Locale/default.pot
 #: Controller/Traits/SmsKeyTrait.php:69
 msgid "{0} SMS-key: {1}"
 msgstr ""
 
+=======
+>>>>>>> master:src/Locale/Users.pot
 #: Model/Behavior/RegisterBehavior.php:148
 msgid "This field is required"
 msgstr ""
