@@ -61,6 +61,7 @@ class UsersShell extends Shell
             ->addSubcommand('passwordEmail')->description(__d('CakeDC/Users', 'Reset the password via email'))
             ->addSubcommand('resetAllPasswords')->description(__d('CakeDC/Users', 'Reset the password for all users'))
             ->addSubcommand('resetPassword')->description(__d('CakeDC/Users', 'Reset the password for an specific user'))
+            ->addSubcommand('updateApiToken')->description(__d('CakeDC/Users', 'Update/create api token for an specific user'))
             ->addOptions([
                 'username' => ['short' => 'u', 'help' => 'The username for the new user'],
                 'password' => ['short' => 'p', 'help' => 'The password for the new user'],
@@ -271,6 +272,34 @@ class UsersShell extends Shell
             $msg = __d('CakeDC/Users', 'The password token could not be generated. Please try again');
             $this->error($msg);
         }
+    }
+
+    /**
+     * Update / create api token for selected user
+     *
+     * Arguments:
+     *
+     * - Username
+     * - Role to be set
+     *
+     * @return void
+     */
+    public function updateApiToken()
+    {
+        $username = Hash::get($this->args, 0);
+        $role = Hash::get($this->args, 1);
+        if (empty($username)) {
+            $this->error(__d('CakeDC/Users', 'Please enter a username.'));
+        }
+        $user = $this->Users->find()->where(['username' => $username])->first();
+        if (empty($user)) {
+            $this->error(__d('CakeDC/Users', 'The user was not found.'));
+        }
+        $user->updateApiToken();
+        $savedUser = $this->Users->save($user);
+
+        $this->out(__d('CakeDC/Users', 'Api token updated for user: {0}', $username));
+        $this->out(__d('CakeDC/Users', 'New api token: {0}', $savedUser->api_token));
     }
 
     /**

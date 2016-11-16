@@ -162,4 +162,14 @@ class User extends Entity
 
         $this->token = str_replace('-', '', Text::uuid());
     }
+
+    /**
+     * Generate api_token in a user
+     * @param int $tokenExpiration seconds to expire the token from Now
+     * @return void
+     */
+    public function updateApiToken()
+    {
+        $this->api_token = str_replace('-', '', Text::uuid());
+    }
 }
