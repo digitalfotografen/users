@@ -13,7 +13,6 @@
     <h3><?= __d('CakeDC/Users', 'Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__d('CakeDC/Users', 'List Users'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__d('CakeDC/Users', 'List Accounts'), ['controller' => 'Accounts', 'action' => 'index']) ?> </li>
     </ul>
 </div>
 <div class="users form large-10 medium-9 columns">
@@ -23,6 +22,7 @@
         <?php
             echo $this->Form->input('username', ['label' => __d('CakeDC/Users', 'Username')]);
             echo $this->Form->input('email', ['label' => __d('CakeDC/Users', 'Email')]);
+            echo $this->Form->input('password', ['label' => __d('CakeDC/Users', 'Password')]);
             echo $this->Form->input('first_name', ['label' => __d('CakeDC/Users', 'First name')]);
             echo $this->Form->input('last_name', ['label' => __d('CakeDC/Users', 'Last name')]);
             echo $this->Form->input('sms', ['label' => __d('CakeDC/Users', 'Sms number')]);
