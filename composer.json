@@ -36,8 +36,7 @@
         "league/oauth2-instagram": "@stable",
         "league/oauth2-google": "@stable",
         "league/oauth2-linkedin": "@stable",
-        "google/recaptcha": "@stable",
-        "robthree/twofactorauth": "^1.5.2"
+        "google/recaptcha": "@stable"
     },
     "suggest": {
         "league/oauth1-client": "Provides Social Authentication with Twitter",
@@ -45,8 +44,7 @@
         "league/oauth2-instagram": "Provides Social Authentication with Instagram",
         "league/oauth2-google": "Provides Social Authentication with Google+",
         "league/oauth2-linkedin": "Provides Social Authentication with LinkedIn",
-        "google/recaptcha": "Provides reCAPTCHA validation for registration form",
-        "robthree/twofactorauth": "Provides Google Authenticator functionality"
+        "google/recaptcha": "Provides reCAPTCHA validation for registration form"
     },
     "autoload": {
         "psr-4": {

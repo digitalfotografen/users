@@ -27,7 +27,6 @@ use Cake\Core\Configure;
 use Cake\Event\Event;
 use Cake\Event\EventDispatcherTrait;
 use Cake\Event\EventManager;
-use Cake\Log\LogTrait;
 use Cake\Network\Request;
 use Cake\Network\Response;
 use Cake\ORM\TableRegistry;
@@ -40,7 +39,6 @@ class SocialAuthenticate extends BaseAuthenticate
 {
 
     use EventDispatcherTrait;
-    use LogTrait;
 
     /**
      * Instance of OAuth2 provider.
@@ -190,13 +188,6 @@ class SocialAuthenticate extends BaseAuthenticate
 
             return compact('token') + $provider->getResourceOwner($token)->toArray();
         } catch (\Exception $e) {
-            $message = sprintf(
-                "Error getting an access token / retrieving the authorized user's profile data. Error message: %s %s",
-                $e->getMessage(),
-                $e
-            );
-            $this->log($message);
-
             return false;
         }
     }
@@ -368,7 +359,7 @@ class SocialAuthenticate extends BaseAuthenticate
     {
         $data = $request->session()->read(Configure::read('Users.Key.Session.social'));
         $requestDataEmail = $request->data('email');
-        if (!empty($data) && empty($data['uid']) && (!empty($data['email']) || !empty($requestDataEmail))) {
+        if (!empty($data) && (!empty($data['email']) || !empty($requestDataEmail))) {
             if (!empty($requestDataEmail)) {
                 $data['email'] = $requestDataEmail;
             }
