@@ -167,15 +167,11 @@ trait LoginTrait
 
             $user = $this->Auth->identify();
 
-<<<<<<< HEAD
             if (!empty($user) && $this->_checkSmsKey($user)) {
                 return $this->redirect(['action' => 'smskey']);
             }
 
-            return $this->_afterIdentifyUser($user, $socialLogin);
-=======
             return $this->_afterIdentifyUser($user, $socialLogin, $googleAuthenticatorLogin);
->>>>>>> CakeDC/master
         }
 
         if (!$this->request->is('post') && !$socialLogin) {

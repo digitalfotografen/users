@@ -64,7 +64,7 @@ trait SmsKeyTrait
         $this->request->session()->write('Smskey.user', $user);
         $this->request->session()->write('Smskey.user', $user);
         $appName = Configure::read('App.name');
-        $sucess = $this->_sendSms(
+        $sucess = $this->sendSms(
             $number, 
             __('{0} SMS-key: {1}', $appName, $secret)
         );
@@ -87,7 +87,7 @@ trait SmsKeyTrait
      * @param string $message complete message
      * @return boolean true on sucess
      */
-    protected function _sendSms($to, $message)
+    protected function sendSms($to, $message)
     {
         $http = new Client();
         $config = Configure::read('Users.SmsKey.SmsConfig');
@@ -109,6 +109,7 @@ trait SmsKeyTrait
                     'username' => $config['api_username'], 
                     'password' => $config['api_password'],
                 ],
+                'type' => 'json'
             ]
         );
         

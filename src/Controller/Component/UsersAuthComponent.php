@@ -126,11 +126,8 @@ class UsersAuthComponent extends Component
             'changePassword',
             'endpoint',
             'authenticated',
-<<<<<<< HEAD
+            'verify',
             'smskey'
-=======
-            'verify'
->>>>>>> CakeDC/master
         ]);
     }
 
