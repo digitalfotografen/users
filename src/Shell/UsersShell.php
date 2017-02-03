@@ -65,8 +65,7 @@ class UsersShell extends Shell
             ->addOptions([
                 'username' => ['short' => 'u', 'help' => 'The username for the new user'],
                 'password' => ['short' => 'p', 'help' => 'The password for the new user'],
-                'email' => ['short' => 'e', 'help' => 'The email for the new user'],
-                'role' => ['short' => 'r', 'help' => 'The role for the new user']
+                'email' => ['short' => 'e', 'help' => 'The email for the new user']
             ]);
 
         return $parser;
@@ -86,23 +85,15 @@ class UsersShell extends Shell
         $password = (empty($this->params['password']) ?
             $this->_generateRandomPassword() : $this->params['password']);
         $email = (empty($this->params['email']) ? $username . '@example.com' : $this->params['email']);
-        $defaultRole = Configure::check('CakeDC/Users.SimpleRbac.default_role')
-            ? Configure::read('CakeDC/Users.SimpleRbac.default_role')
-            : 'user';
-        $role = (empty($this->params['role']) ? $defaultRole : $this->params['role']);
         $user = [
             'username' => $username,
             'email' => $email,
             'password' => $password,
-            'role' => $role,
             'active' => 1,
         ];
 
         $userEntity = $this->Users->newEntity($user);
-<<<<<<< HEAD
-=======
         $userEntity->role = 'user';
->>>>>>> CakeDC/master
         $savedUser = $this->Users->save($userEntity);
         $this->out(__d('CakeDC/Users', 'User added:'));
         $this->out(__d('CakeDC/Users', 'Id: {0}', $savedUser->id));
