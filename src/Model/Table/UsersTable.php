@@ -85,6 +85,8 @@ class UsersTable extends Table
             'allowEmpty' => false
         ]);
 
+        $validator = $this->passwordQualityValidator($validator);
+
         return $validator;
     }
 
@@ -120,6 +122,8 @@ class UsersTable extends Table
         $validator
             ->requirePresence('password', 'create')
             ->notEmpty('password');
+
+        $validator = $this->passwordQualityValidator($validator);
 
         $validator
             ->allowEmpty('first_name');
@@ -161,6 +165,35 @@ class UsersTable extends Table
 
         return $validator;
     }
+
+    /**
+    *
+    */
+    public function passwordQualityValidator(Validator $validator){
+        $validator->add('password', [
+            'minLength' => [
+            'rule' => ['minLength', 8],
+            'on' => ['create', 'update'],
+            'message' => __d('CakeDC/Users', 'Passwords must have at least 8 charcters')
+        ]]);
+        
+        $validator->add('password', 'custom', [
+            'rule' => function ($value, $context) {
+                $uppercase = preg_match('@[A-Z]@', $value);
+                $lowercase = preg_match('@[a-z]@', $value);
+                $number    = preg_match('@[0-9]@', $value);
+
+                if($uppercase && $lowercase && $number) {
+                    return true;
+                }
+                return false;
+            },
+            'message' => __d('CakeDC/Users', 'Passwords must contain the following character classes: lowercase, uppcase and digits')
+        ]);
+
+        return $validator;
+    }
+
 
     /**
      * Returns a rules checker object that will be used for validating
