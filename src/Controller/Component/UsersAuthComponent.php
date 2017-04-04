@@ -124,7 +124,7 @@ class UsersAuthComponent extends Component
                 'login',
                 'socialEmail',
                 'verify',
-                'smskey'
+                'smskey',
                 // RegisterTrait
                 'register',
                 'validateEmail',
