@@ -161,7 +161,7 @@ trait PasswordManagementTrait
                 $message = __d('CakeDC/Users', 'Google Authenticator token was successfully reset');
                 $this->Flash->success($message, 'default');
             } catch (\Exception $e) {
-                $message = __d('CakeDC/Users', $e->getMessage());
+                $message = __d('CakeDC/Users', '{0}', $e->getMessage());
                 $this->Flash->error($message, 'default');
             }
         }
