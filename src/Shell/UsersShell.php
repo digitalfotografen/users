@@ -65,6 +65,7 @@ class UsersShell extends Shell
             ->addSubcommand('passwordEmail')->setDescription(__d('CakeDC/Users', 'Reset the password via email'))
             ->addSubcommand('resetAllPasswords')->setDescription(__d('CakeDC/Users', 'Reset the password for all users'))
             ->addSubcommand('resetPassword')->setDescription(__d('CakeDC/Users', 'Reset the password for an specific user'))
+            ->addSubcommand('updateSms')->setDescription(__d('CakeDC/Users', 'Update/create sms number for an specific user'))
             ->addSubcommand('updateApiToken')->setDescription(__d('CakeDC/Users', 'Update/create api token for an specific user'))
             ->addOptions([
                 'username' => ['short' => 'u', 'help' => 'The username for the new user'],
@@ -238,14 +239,12 @@ class UsersShell extends Shell
      * Arguments:
      *
      * - Username
-     * - Role to be set
      *
      * @return void
      */
     public function updateApiToken()
     {
         $username = Hash::get($this->args, 0);
-        $role = Hash::get($this->args, 1);
         if (empty($username)) {
             $this->error(__d('CakeDC/Users', 'Please enter a username.'));
         }
@@ -258,6 +257,37 @@ class UsersShell extends Shell
 
         $this->out(__d('CakeDC/Users', 'Api token updated for user: {0}', $username));
         $this->out(__d('CakeDC/Users', 'New api token: {0}', $savedUser->api_token));
+    }
+
+    /**
+     * Update / create sms number for selected user
+     *
+     * Arguments:
+     *
+     * - Username
+     * - SMS-number
+     *
+     * @return void
+     */
+    public function updateSms()
+    {
+        $username = Hash::get($this->args, 0);
+        $sms = Hash::get($this->args, 1);
+        if (empty($username)) {
+            $this->error(__d('CakeDC/Users', 'Please enter a username.'));
+        }
+        if (empty($sms)) {
+            $this->error(__d('CakeDC/Users', 'Please enter an SMS numder.'));
+        }
+        $user = $this->Users->find()->where(['username' => $username])->first();
+        if (empty($user)) {
+            $this->error(__d('CakeDC/Users', 'The user was not found.'));
+        }
+        $user->sms = $sms;
+        $savedUser = $this->Users->save($user);
+
+        $this->out(__d('CakeDC/Users', 'SMS number updated for user: {0}', $username));
+        $this->out(__d('CakeDC/Users', 'New sms number: {0}', $savedUser->sms));
     }
 
     /**
