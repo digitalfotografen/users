@@ -1,11 +1,11 @@
 <?php
 /**
- * Copyright 2010 - 2015, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2010 - 2017, Cake Development Corporation (https://www.cakedc.com)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2010 - 2015, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2010 - 2017, Cake Development Corporation (https://www.cakedc.com)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
@@ -249,10 +249,11 @@ class UsersAuthComponentTest extends TestCase
             ->method('isAuthorized')
             ->with(null, $this->callback(function ($subject) {
                 return $subject->params === [
-                        'pass' => [],
                         'plugin' => 'CakeDC/Users',
                         'controller' => 'Users',
                         'action' => 'requestResetPassword',
+                        '_ext' => null,
+                        'pass' => [],
                         '_matchedRoute' => '/route/*',
                     ];
             }))
@@ -328,10 +329,18 @@ class UsersAuthComponentTest extends TestCase
             ->method('isAuthorized')
             ->with(null, $this->callback(function ($subject) {
                 return $subject->params === [
+<<<<<<< HEAD
                         'pass' => [],
                         'plugin' => 'CakeDC/Users',
                         'controller' => 'Users',
                         'action' => 'requestResetPassword',
+=======
+                        'plugin' => 'CakeDC/Users',
+                        'controller' => 'Users',
+                        'action' => 'requestResetPassword',
+                        '_ext' => null,
+                        'pass' => [],
+>>>>>>> CakeDC/master
                         '_matchedRoute' => '/route/*',
                     ];
             }))
@@ -362,10 +371,18 @@ class UsersAuthComponentTest extends TestCase
             ->method('isAuthorized')
             ->with(null, $this->callback(function ($subject) {
                 return $subject->params === [
+<<<<<<< HEAD
                         'pass' => [],
                         'plugin' => 'CakeDC/Users',
                         'controller' => 'Users',
                         'action' => 'requestResetPassword',
+=======
+                        'plugin' => 'CakeDC/Users',
+                        'controller' => 'Users',
+                        'action' => 'requestResetPassword',
+                        '_ext' => null,
+                        'pass' => [],
+>>>>>>> CakeDC/master
                         '_matchedRoute' => '/route/*',
                     ];
             }))
@@ -422,10 +439,18 @@ class UsersAuthComponentTest extends TestCase
             ->method('isAuthorized')
             ->with(null, $this->callback(function ($subject) {
                 return $subject->params === [
+<<<<<<< HEAD
                         'pass' => ['pass-one'],
                         'plugin' => 'CakeDC/Users',
                         'controller' => 'Users',
                         'action' => 'requestResetPassword',
+=======
+                        'plugin' => 'CakeDC/Users',
+                        'controller' => 'Users',
+                        'action' => 'requestResetPassword',
+                        '_ext' => null,
+                        'pass' => ['pass-one'],
+>>>>>>> CakeDC/master
                         '_matchedRoute' => '/route/*',
                     ];
             }))
