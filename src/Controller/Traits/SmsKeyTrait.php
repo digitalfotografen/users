@@ -93,6 +93,21 @@ trait SmsKeyTrait
         $config = Configure::read('Users.SmsKey.SmsConfig');
         $url = $config['url'];
         Log::write('debug',print_r($config, true));
+        $options = [
+            'headers' => [
+                'Content-type' => 'application/x-www-form-urlencoded',
+            ],
+            'auth' => [
+                'type' => 'basic',
+                'username' => $config['api_username'], 
+                'password' => $config['api_password'],
+            ],
+            'type' => 'json'
+        ];
+        if (!empty($config['Proxy'])){
+            $options['proxy'] = $config['Proxy'];
+        }
+
         $response = $http->post($url, 
             [   
                 'to' => $to, 
@@ -100,17 +115,7 @@ trait SmsKeyTrait
                 'from' => $config['from'],
                 'flashsms' => $config['flashsms'],
             ],
-            [
-                'headers' => [
-                    'Content-type' => 'application/x-www-form-urlencoded',
-                ],
-                'auth' => [
-                    'type' => 'basic',
-                    'username' => $config['api_username'], 
-                    'password' => $config['api_password'],
-                ],
-                'type' => 'json'
-            ]
+            $options
         );
         
         if (!$response->isOK()){

@@ -122,6 +122,14 @@ $config = [
                 'api_password' => 'xxxx',
                 'from' => 'number or name',
                 'flashsms' => 'no', // no or yes
+                /*
+                'Proxy' => [
+                    //'username' => 'mark',
+                    //'password' => 'testing',
+                    'proxy' => 'tcp://192.168.2.210:3128',
+                    'request_fulluri' => true
+                ],
+                */
             ],
         ],
     ],
