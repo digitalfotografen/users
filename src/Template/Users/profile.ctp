@@ -33,6 +33,7 @@
             <p><?= h($user->email) ?></p>
             <h6 class="subheader"><?= __d('CakeDC/Users', 'SMS number') ?></h6>
             <p><?= h($user->sms) ?></p>
+            <?= $this->User->socialConnectLinkList($user->social_accounts) ?>
             <?php
             if (!empty($user->social_accounts)):
                 ?>

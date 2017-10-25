@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Users\n"
-"POT-Creation-Date: 2017-04-04 14:22+0200\n"
+"POT-Creation-Date: 2017-10-25 15:50+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Ulrik Södergren <ulrik@digitalfotografen.se>\n"
 "Language-Team: \n"
@@ -59,10 +59,18 @@ msgid "Invalid app salt, app salt must be at least 256 bits (32 bytes) long"
 msgstr ""
 "Ogiltig app salt, app salt måste vara åtminstone 256 bitar (32 byte) långt"
 
-#: Controller/Component/UsersAuthComponent.php:204
+#: Controller/Component/UsersAuthComponent.php:205
 msgid "You can't enable email validation workflow if use_email is false"
 msgstr ""
 "Du kan inte aktivera epost-validering arbetsflöde om use_email är falskt"
+
+#: Controller/Traits/LinkSocialTrait.php:54
+msgid "Could not associate account, please try again."
+msgstr "Kunde inte ansluta konto, försök igen."
+
+#: Controller/Traits/LinkSocialTrait.php:77
+msgid "Social account was associated."
+msgstr "Socialt konto anslöts."
 
 #: Controller/Traits/LoginTrait.php:104
 msgid "Issues trying to log in with your social account"
@@ -88,24 +96,22 @@ msgstr ""
 "Ditt sociala konto har inte validerats ännu. Kontrollera din inkorg för "
 "instruktioner"
 
-#: Controller/Traits/LoginTrait.php:135
-msgid ""
-"{0}, $msg));\n"
-"        }\n"
-"\n"
-"        return $this->redirect(["
-msgstr ""
-"{0}, $msg));\n"
-"        } retur $this-> redirect (["
+#: Controller/Traits/LoginTrait.php:135;252
+#: Controller/Traits/PasswordManagementTrait.php:84;167
+msgid "{0}"
+msgstr "{0}"
+
+#: Controller/Traits/LoginTrait.php:180 Controller/Traits/RegisterTrait.php:82
+msgid "Invalid reCaptcha"
+msgstr "Ogiltig reCaptcha"
+
+#: Controller/Traits/LoginTrait.php:196
+msgid "You are already logged in"
+msgstr "Du är redan inloggad."
 
 #: Controller/Traits/LoginTrait.php:217
 msgid "Please enable Google Authenticator first."
 msgstr "Vänligen aktivera Google Authenticator först."
-
-#: Controller/Traits/LoginTrait.php:252
-#: Controller/Traits/PasswordManagementTrait.php:83;164
-msgid "{0}"
-msgstr "{0}"
 
 #: Controller/Traits/LoginTrait.php:292
 msgid "Verification code is invalid. Try again"
@@ -115,46 +121,46 @@ msgstr "Valideringskoden är ogiltig. Försök igen"
 msgid "Username or password is incorrect"
 msgstr "Användarnamn eller lösenord är felaktigt"
 
-#: Controller/Traits/LoginTrait.php:384
+#: Controller/Traits/LoginTrait.php:386
 msgid "You've successfully logged out"
 msgstr "Du har loggats ut"
 
-#: Controller/Traits/PasswordManagementTrait.php:48;81
+#: Controller/Traits/PasswordManagementTrait.php:49;82
 #: Controller/Traits/ProfileTrait.php:50
 msgid "User was not found"
 msgstr "Användaren hittades inte"
 
-#: Controller/Traits/PasswordManagementTrait.php:69;77;85
+#: Controller/Traits/PasswordManagementTrait.php:70;78;86
 msgid "Password could not be changed"
 msgstr "Lösenordet kunde inte ändras"
 
-#: Controller/Traits/PasswordManagementTrait.php:73
+#: Controller/Traits/PasswordManagementTrait.php:74
 msgid "Password has been changed successfully"
 msgstr "Lösenordsbytet lyckades!"
 
-#: Controller/Traits/PasswordManagementTrait.php:125
+#: Controller/Traits/PasswordManagementTrait.php:127
 msgid "Please check your email to continue with password reset process"
 msgstr "Kontrollera din epost för att fortsätta lösenordsåterställningen"
 
-#: Controller/Traits/PasswordManagementTrait.php:128 Shell/UsersShell.php:231
+#: Controller/Traits/PasswordManagementTrait.php:130 Shell/UsersShell.php:249
 msgid "The password token could not be generated. Please try again"
 msgstr "Lösenordstoken kunde inte skapas. Var god försök igen"
 
-#: Controller/Traits/PasswordManagementTrait.php:134
+#: Controller/Traits/PasswordManagementTrait.php:136
 #: Controller/Traits/UserValidationTrait.php:107
 msgid "User {0} was not found"
 msgstr "Användaren {0} hittades inte"
 
-#: Controller/Traits/PasswordManagementTrait.php:136
+#: Controller/Traits/PasswordManagementTrait.php:138
 msgid "The user is not active"
 msgstr "Användaren är inte aktiverad"
 
-#: Controller/Traits/PasswordManagementTrait.php:138
+#: Controller/Traits/PasswordManagementTrait.php:140
 #: Controller/Traits/UserValidationTrait.php:102;111
 msgid "Token could not be reset"
 msgstr "Token kunde inte återställas"
 
-#: Controller/Traits/PasswordManagementTrait.php:161
+#: Controller/Traits/PasswordManagementTrait.php:164
 msgid "Google Authenticator token was successfully reset"
 msgstr "Google Authenticator token har återställts"
 
@@ -165,10 +171,6 @@ msgstr "Inte auktoriserad, vänligen logga in först"
 #: Controller/Traits/RegisterTrait.php:43
 msgid "You must log out to register a new user account"
 msgstr "Du måste logga ut för att registrera ett nytt användarkonto"
-
-#: Controller/Traits/RegisterTrait.php:82
-msgid "Invalid reCaptcha"
-msgstr "Ogiltig reCaptcha"
 
 #: Controller/Traits/RegisterTrait.php:89
 msgid "The user could not be saved"
@@ -254,15 +256,15 @@ msgstr "Token har återställts. Kontrollera din e-post."
 msgid "User {0} is already active"
 msgstr "AnvÃ¤ndaren {0} Ã¤r redan aktiv"
 
-#: Email/EmailSender.php:39
+#: Mailer/UsersMailer.php:34
 msgid "Your account validation link"
 msgstr "Din länk för att validera kontot"
 
-#: Mailer/UsersMailer.php:55
+#: Mailer/UsersMailer.php:52
 msgid "{0}Your reset password link"
 msgstr "{0} Din länk för att återställa lösenord"
 
-#: Mailer/UsersMailer.php:81
+#: Mailer/UsersMailer.php:75
 msgid "{0}Your social account validation link"
 msgstr "{0} Ditt sociala konto svalideringslänk"
 
@@ -270,68 +272,72 @@ msgstr "{0} Ditt sociala konto svalideringslänk"
 msgid "Missing 'username' in options data"
 msgstr "Saknas \"username\" i alternativa uppgifter"
 
-#: Model/Behavior/PasswordBehavior.php:54
+#: Model/Behavior/LinkSocialBehavior.php:53
+msgid "Social account already associated to another user"
+msgstr "Socialt konto är redan kopplat till en annan användare."
+
+#: Model/Behavior/PasswordBehavior.php:45
 msgid "Reference cannot be null"
 msgstr "Referens får inte vara null"
 
-#: Model/Behavior/PasswordBehavior.php:59
+#: Model/Behavior/PasswordBehavior.php:50
 msgid "Token expiration cannot be empty"
 msgstr "Giltighet för token kan inte vara tom"
 
-#: Model/Behavior/PasswordBehavior.php:65;114
+#: Model/Behavior/PasswordBehavior.php:56;117
 msgid "User not found"
 msgstr "Användaren hittades inte"
 
-#: Model/Behavior/PasswordBehavior.php:69
-#: Model/Behavior/RegisterBehavior.php:116
+#: Model/Behavior/PasswordBehavior.php:60
+#: Model/Behavior/RegisterBehavior.php:112;205
 msgid "User account already validated"
 msgstr "Kontot är redan aktiverat!"
 
-#: Model/Behavior/PasswordBehavior.php:76
+#: Model/Behavior/PasswordBehavior.php:67
 msgid "User not active"
 msgstr "Användaren ej aktiv"
 
-#: Model/Behavior/PasswordBehavior.php:119
+#: Model/Behavior/PasswordBehavior.php:122
 msgid "The current password does not match"
 msgstr "Nuvarande lösenord matchar inte"
 
-#: Model/Behavior/PasswordBehavior.php:122
+#: Model/Behavior/PasswordBehavior.php:125
 msgid "You cannot use the current password as the new one"
 msgstr "Du kan inte använda det aktuella lösenordet som det nya"
 
-#: Model/Behavior/RegisterBehavior.php:94
+#: Model/Behavior/RegisterBehavior.php:90
 msgid "User not found for the given token and email."
 msgstr "Hittade ingen användare som matchar angivet token eller epost"
 
-#: Model/Behavior/RegisterBehavior.php:97
+#: Model/Behavior/RegisterBehavior.php:93
 msgid "Token has already expired user with no token"
 msgstr "Token har redan gått ut eller användare utan token"
 
-#: Model/Behavior/SocialAccountBehavior.php:107;134
+#: Model/Behavior/SocialAccountBehavior.php:103;130
 msgid "Account already validated"
 msgstr "Kontot är redan aktiverat!"
 
-#: Model/Behavior/SocialAccountBehavior.php:110;137
+#: Model/Behavior/SocialAccountBehavior.php:106;133
 msgid "Account not found for the given token and email."
 msgstr "Kontot hittades inte för givet token och e-post."
 
-#: Model/Behavior/SocialBehavior.php:59
+#: Model/Behavior/SocialBehavior.php:82
 msgid "Unable to login user with reference {0}"
 msgstr "Det går inte att logga in användaren med refrens {0}"
 
-#: Model/Behavior/SocialBehavior.php:101
+#: Model/Behavior/SocialBehavior.php:121
 msgid "Email not present"
 msgstr "Epost saknas"
 
-#: Model/Table/UsersTable.php:83
+#: Model/Table/UsersTable.php:81
 msgid "Your password does not match your confirm password. Please try again"
 msgstr "Dina lösenord matchar inte. Vänligen försök igen."
 
-#: Model/Table/UsersTable.php:177
+#: Model/Table/UsersTable.php:174
 msgid "Passwords must have at least 8 charcters"
 msgstr "Lösenord måste ha minst 8 tecken"
 
-#: Model/Table/UsersTable.php:191
+#: Model/Table/UsersTable.php:188
 msgid ""
 "Passwords must contain the following character classes: lowercase, uppcase "
 "and digits"
@@ -339,11 +345,11 @@ msgstr ""
 "Lösenord måste innehålla följande teckenklasser: gemener, versaler och "
 "siffror"
 
-#: Model/Table/UsersTable.php:209
+#: Model/Table/UsersTable.php:206
 msgid "Username already exists"
 msgstr "Användarnamnet är upptaget"
 
-#: Model/Table/UsersTable.php:215
+#: Model/Table/UsersTable.php:212
 msgid "Email already exists"
 msgstr "E-postadressen finns redan"
 
@@ -352,94 +358,94 @@ msgid "Utilities for CakeDC Users Plugin"
 msgstr "Verktyg för CakeDC User Plugin"
 
 #: Shell/UsersShell.php:59
-msgid "Activate an specific user"
-msgstr "Aktivera en specifik användare"
-
-#: Shell/UsersShell.php:60
-msgid "Add a new superadmin user for testing purposes"
-msgstr "Lägga till en ny superadmin-användare för teständamål"
-
-#: Shell/UsersShell.php:61
-msgid "Add a new user"
-msgstr "Ny anvÃ¤ndare"
-
-#: Shell/UsersShell.php:62
-msgid "Change the role for an specific user"
-msgstr "Ändra rollen för en specifik användare"
-
-#: Shell/UsersShell.php:63
-msgid "Deactivate an specific user"
-msgstr "Inaktivare en specifik användare"
-
-#: Shell/UsersShell.php:64
-msgid "Delete an specific user"
-msgstr "Ta bort en specifik anvÃ¤ndare"
-
-#: Shell/UsersShell.php:65
-msgid "Reset the password via email"
-msgstr "Återställ lösenord via e-post"
-
-#: Shell/UsersShell.php:66
-msgid "Reset the password for all users"
-msgstr "Återställ lösenord för alla användare"
-
-#: Shell/UsersShell.php:67
-msgid "Reset the password for an specific user"
-msgstr "Återställ lösenordet för en specifik användare"
-
-#: Shell/UsersShell.php:68
 msgid "Update/create sms number for an specific user"
 msgstr "Uppdatera/skapa sms-nummer för en specifik användare"
 
-#: Shell/UsersShell.php:69
+#: Shell/UsersShell.php:60
 msgid "Update/create api token for an specific user"
 msgstr "Uppdatering/skapa api-token för en specifik användare"
 
-#: Shell/UsersShell.php:117;143
+#: Shell/UsersShell.php:62
+msgid "Activate an specific user"
+msgstr "Aktivera en specifik användare"
+
+#: Shell/UsersShell.php:65
+msgid "Add a new superadmin user for testing purposes"
+msgstr "Lägga till en ny superadmin-användare för teständamål"
+
+#: Shell/UsersShell.php:68
+msgid "Add a new user"
+msgstr "Ny anvÃ¤ndare"
+
+#: Shell/UsersShell.php:71
+msgid "Change the role for an specific user"
+msgstr "Ändra rollen för en specifik användare"
+
+#: Shell/UsersShell.php:74
+msgid "Deactivate an specific user"
+msgstr "Inaktivare en specifik användare"
+
+#: Shell/UsersShell.php:77
+msgid "Delete an specific user"
+msgstr "Ta bort en specifik anvÃ¤ndare"
+
+#: Shell/UsersShell.php:80
+msgid "Reset the password via email"
+msgstr "Återställ lösenord via e-post"
+
+#: Shell/UsersShell.php:83
+msgid "Reset the password for all users"
+msgstr "Återställ lösenord för alla användare"
+
+#: Shell/UsersShell.php:86
+msgid "Reset the password for an specific user"
+msgstr "Återställ lösenordet för en specifik användare"
+
+#: Shell/UsersShell.php:135;161
 msgid "Please enter a password."
 msgstr "Ange ett lösenord."
 
-#: Shell/UsersShell.php:121
+#: Shell/UsersShell.php:139
 msgid "Password changed for all users"
 msgstr "Lösenordet ändrat för alla användare"
 
-#: Shell/UsersShell.php:122;150
+#: Shell/UsersShell.php:140;168
 msgid "New password: {0}"
 msgstr "Nytt lösenord: {0}"
 
-#: Shell/UsersShell.php:140;168;249;277;303;400
+#: Shell/UsersShell.php:158;186;267;295;321;418
 msgid "Please enter a username."
 msgstr "Ange ett användarnamn."
 
-#: Shell/UsersShell.php:149
+#: Shell/UsersShell.php:167
 msgid "Password changed for user: {0}"
 msgstr "Lösenordet ändrat för användare: {0}"
 
-#: Shell/UsersShell.php:171
+#: Shell/UsersShell.php:189
 msgid "Please enter a role."
 msgstr "Ange en roll."
 
-#: Shell/UsersShell.php:177
+#: Shell/UsersShell.php:195
 msgid "Role changed for user: {0}"
 msgstr "Rollen har ändrats för användare: {0}"
 
-#: Shell/UsersShell.php:178
+#: Shell/UsersShell.php:196
 msgid "New role: {0}"
 msgstr "Ny roll: {0}"
 
-#: Shell/UsersShell.php:193
+#: Shell/UsersShell.php:211
 msgid "User was activated: {0}"
 msgstr "Användaren aktiverades: {0}"
 
-#: Shell/UsersShell.php:208
+#: Shell/UsersShell.php:226
 msgid "User was de-activated: {0}"
 msgstr "Användaren avaktiverad: {0}"
 
-#: Shell/UsersShell.php:220
+#: Shell/UsersShell.php:238
 msgid "Please enter a username or email."
 msgstr "Skriv användarnamn eller epost"
 
-#: Shell/UsersShell.php:228
+#: Shell/UsersShell.php:246
 msgid ""
 "Please ask the user to check the email to continue with password reset "
 "process"
@@ -447,71 +453,71 @@ msgstr ""
 "Be användaren kontrollera sin epost för att fortsätta "
 "lösenordsåterställningen"
 
-#: Shell/UsersShell.php:253;284;378
+#: Shell/UsersShell.php:271;302;396
 msgid "The user was not found."
 msgstr "Användaren hittades inte."
 
-#: Shell/UsersShell.php:258
+#: Shell/UsersShell.php:276
 msgid "Api token updated for user: {0}"
 msgstr "API-token uppdateras för användaren: {0}"
 
-#: Shell/UsersShell.php:259
+#: Shell/UsersShell.php:277
 msgid "New api token: {0}"
 msgstr "Nya api-token: {0}"
 
-#: Shell/UsersShell.php:280
+#: Shell/UsersShell.php:298
 msgid "Please enter an SMS numder."
 msgstr "Vänligen ange ett SMS nummer."
 
-#: Shell/UsersShell.php:289
+#: Shell/UsersShell.php:307
 msgid "SMS number updated for user: {0}"
 msgstr "SMS-nummer uppdateras med användare: {0}"
 
-#: Shell/UsersShell.php:290
+#: Shell/UsersShell.php:308
 msgid "New sms number: {0}"
 msgstr "Nytt sms-nummer: {0}"
 
-#: Shell/UsersShell.php:349
+#: Shell/UsersShell.php:367
 msgid "Superuser added:"
 msgstr "Superanvändare tillagd:"
 
-#: Shell/UsersShell.php:351
+#: Shell/UsersShell.php:369
 msgid "User added:"
 msgstr "Användare tillagd:"
 
-#: Shell/UsersShell.php:353
+#: Shell/UsersShell.php:371
 msgid "Id: {0}"
 msgstr "Id: {0}"
 
-#: Shell/UsersShell.php:354
+#: Shell/UsersShell.php:372
 msgid "Username: {0}"
 msgstr "Användarnamn: {0}"
 
-#: Shell/UsersShell.php:355
+#: Shell/UsersShell.php:373
 msgid "Email: {0}"
 msgstr "Epost: {0}"
 
-#: Shell/UsersShell.php:356
+#: Shell/UsersShell.php:374
 msgid "Role: {0}"
 msgstr "Roll: {0}"
 
-#: Shell/UsersShell.php:357
+#: Shell/UsersShell.php:375
 msgid "Password: {0}"
 msgstr "Lösenord: {0}"
 
-#: Shell/UsersShell.php:359
+#: Shell/UsersShell.php:377
 msgid "User could not be added:"
 msgstr "Användare kunde inte läggas:"
 
-#: Shell/UsersShell.php:362
+#: Shell/UsersShell.php:380
 msgid "Field: {0} Error: {1}"
 msgstr "Fält: {0} Fel: {1}"
 
-#: Shell/UsersShell.php:408
+#: Shell/UsersShell.php:426
 msgid "The user {0} was not deleted. Please try again"
 msgstr "Användaren {0} raderades ej. Var god försök igen"
 
-#: Shell/UsersShell.php:410
+#: Shell/UsersShell.php:428
 msgid "The user {0} was deleted successfully"
 msgstr "Användaren {0} har raderats"
 
@@ -583,8 +589,9 @@ msgid "Add User"
 msgstr "Ny användare"
 
 #: Template/Users/add.ctp:23 Template/Users/edit.ctp:35
-#: Template/Users/index.ctp:22 Template/Users/profile.ctp:30
-#: Template/Users/register.ctp:19 Template/Users/view.ctp:33
+#: Template/Users/index.ctp:22 Template/Users/login.ctp:20
+#: Template/Users/profile.ctp:30 Template/Users/register.ctp:19
+#: Template/Users/view.ctp:33
 msgid "Username"
 msgstr "Användarnamn"
 
@@ -594,7 +601,8 @@ msgstr "Användarnamn"
 msgid "Email"
 msgstr "Epost"
 
-#: Template/Users/add.ctp:25 Template/Users/register.ctp:21
+#: Template/Users/add.ctp:25 Template/Users/login.ctp:21
+#: Template/Users/register.ctp:21
 msgid "Password"
 msgstr "Lösenord"
 
@@ -740,23 +748,23 @@ msgstr "{0} {1}"
 msgid "Change Password"
 msgstr "Ändra Lösenord"
 
-#: Template/Users/profile.ctp:39 Template/Users/view.ctp:70
+#: Template/Users/profile.ctp:40 Template/Users/view.ctp:70
 msgid "Social Accounts"
 msgstr "Sociala konton"
 
-#: Template/Users/profile.ctp:43 Template/Users/view.ctp:75
+#: Template/Users/profile.ctp:44 Template/Users/view.ctp:75
 msgid "Avatar"
 msgstr "Profilbild"
 
-#: Template/Users/profile.ctp:44 Template/Users/view.ctp:74
+#: Template/Users/profile.ctp:45 Template/Users/view.ctp:74
 msgid "Provider"
 msgstr "Tillhandahålls av"
 
-#: Template/Users/profile.ctp:45
+#: Template/Users/profile.ctp:46
 msgid "Link"
 msgstr "Länk"
 
-#: Template/Users/profile.ctp:52
+#: Template/Users/profile.ctp:53
 msgid "Link to {0}"
 msgstr "Länk till {0}"
 
@@ -868,13 +876,34 @@ msgstr "Välkommen, {0}"
 msgid "reCaptcha is not configured! Please configure Users.reCaptcha.key"
 msgstr "reCaptcha är inte konfigurerad! Konfigurera Users.reCaptcha.key"
 
+#: View/Helper/UserHelper.php:205
+msgid "btn btn-social btn-{0}"
+msgstr "btn btn-social btn-{0} "
+
+#: View/Helper/UserHelper.php:211
+msgid "Connected with {0}"
+msgstr "Ansluten med {0}"
+
+#: View/Helper/UserHelper.php:216
+msgid "Connect with {0}"
+msgstr "Anslut med {0}"
+
 #: Controller/Traits/SmsKeyTrait.php:69
 msgid "{0} SMS-key: {1}"
 msgstr "{0} SMS-nyckel: {1}"
 
-#: Model/Behavior/RegisterBehavior.php:155
+#: Model/Behavior/RegisterBehavior.php:151
 msgid "This field is required"
 msgstr "Detta fält är obligatoriskt"
+
+#~ msgid ""
+#~ "{0}, $msg));\n"
+#~ "        }\n"
+#~ "\n"
+#~ "        return $this->redirect(["
+#~ msgstr ""
+#~ "{0}, $msg));\n"
+#~ "        } retur $this-> redirect (["
 
 #~ msgid "Type {0} is not valid"
 #~ msgstr "Typ {0} är inte giltig"
@@ -904,9 +933,6 @@ msgstr "Detta fält är obligatoriskt"
 #~ msgstr ""
 #~ "Saknar kolumn {0} i tabell {1} vid kontroll av ägarbehörigheter för "
 #~ "användare {2}"
-
-#~ msgid "You are already logged in"
-#~ msgstr "Du är redan inloggad."
 
 #~ msgid "List Accounts"
 #~ msgstr "Lista konton"
