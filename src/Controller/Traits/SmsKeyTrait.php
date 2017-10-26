@@ -14,6 +14,7 @@ namespace CakeDC\Users\Controller\Traits;
 use Cake\Core\Configure;
 use Cake\Http\Client;
 use Cake\Log\Log;
+use \DateTime;
 
 /**
  * Covers SmsKey features
@@ -29,14 +30,27 @@ trait SmsKeyTrait
      */
     public function smskey()
     {
-        if ($this->request->is('post')) {
-            if (isset($this->request->data['smskey'])){
-                $secret = $this->request->session()->read('Smskey.secret');
-                if ($this->request->data['smskey'] == $secret){
-                    $user = $this->request->session()->read('Smskey.user');
-                    return $this->_afterIdentifyUser($user);
-                }
+        if ($this->request->is('post') && isset($this->request->data['smskey'])) {
+            $expired = $this->request->session()->read('Smskey.expire') ?? null;
+            $secret = $this->request->session()->read('Smskey.secret') ?? null;
+
+            if (empty($secret) || empty($expired)){
+                $msg = __d('CakeDC/Users', 'Sms key was never set by system');
+                $this->Flash->error($msg);
+                return;
             }
+
+            if ($expired < new DateTime("now")){
+                $msg = __d('CakeDC/Users', 'Sms key expired');
+                $this->Flash->error($msg);
+                return;
+            }
+
+            if ($this->request->data['smskey'] == $secret){
+                $user = $this->request->session()->read('Smskey.user');
+                return $this->_afterIdentifyUser($user);
+            }
+
             $msg = __d('CakeDC/Users', 'Invalid sms key');
             $this->Flash->error($msg);
         }
@@ -47,12 +61,14 @@ trait SmsKeyTrait
      * Sends key to user
      *
      * @param Array $user user
-     * @return void
+     * @return \Cake\Network\Response || booelan Redirects to login on failre
      */
     public function renewSmsKey($user)
     {
         $secret = (string) rand(100000 , 999999); // switch this to random_int when using php7
-        
+        $expire = new DateTime("now");
+        $expire = $expire->modify( Configure::read('Users.SmsKey.expire', '+30 minutes') );
+
         if (empty($user) || empty($user['sms'])){
             $message = __d('CakeDC/Users', 'Missing SMS number for this user');
             $this->Flash->error($message, 'default', [], 'auth');
@@ -62,7 +78,7 @@ trait SmsKeyTrait
         $number = $user['sms'];
         $this->request->session()->write('Smskey.secret', $secret);
         $this->request->session()->write('Smskey.user', $user);
-        $this->request->session()->write('Smskey.user', $user);
+        $this->request->session()->write('Smskey.expire', $expire);
         $appName = Configure::read('App.name');
         $sucess = $this->sendSms(
             $number, 
@@ -92,31 +108,34 @@ trait SmsKeyTrait
         $http = new Client();
         $config = Configure::read('Users.SmsKey.SmsConfig');
         $url = $config['url'];
-        Log::write('debug',print_r($config, true));
+        Log::write('debug', print_r($config, true));
         $options = [
             'headers' => [
                 'Content-type' => 'application/x-www-form-urlencoded',
             ],
             'auth' => [
                 'type' => 'basic',
-                'username' => $config['api_username'], 
+                'username' => $config['api_username'],
                 'password' => $config['api_password'],
             ],
             'type' => 'json'
         ];
-        if (!empty($config['Proxy'])){
+
+        if (!empty($config['Proxy'])) {
             $options['proxy'] = $config['Proxy'];
         }
 
-        $response = $http->post($url, 
-            [   
-                'to' => $to, 
-                'message' => $message,
-                'from' => $config['from'],
-                'flashsms' => $config['flashsms'],
-            ],
-            $options
-        );
+        $q = [
+            'to' => $to,
+            'message' => $message,
+            'from' => $config['from'],
+        ];
+
+        if (isset($config['flashsms'])) {
+            $q['flashsms'] = $config['flashsms'];
+        }
+
+        $response = $http->post($url, $q, $options);
         
         if (!$response->isOK()){
             Log::write('error', "=== sendSMS failed ===");

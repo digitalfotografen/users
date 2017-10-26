@@ -118,6 +118,7 @@ $config = [
         ],
         'SmsKey' => [
             'active' => false,
+            'expire' => '+30 minutes',
             'SmsConfig' => [
                 'url' => 'https://api.46elks.com/a1/SMS',
                 'api_username' => 'xxxxxx',
