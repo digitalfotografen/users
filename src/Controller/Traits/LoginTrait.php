@@ -364,6 +364,8 @@ trait LoginTrait
                 $this->Flash->error($message, 'default', [], 'auth');
             }
 
+            $this->dispatchEvent(UsersAuthComponent::EVENT_FAILED_LOGIN, ['user' => $user]);
+
             return $this->redirect(Configure::read('Auth.loginAction'));
         }
     }
