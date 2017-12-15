@@ -14,6 +14,7 @@ namespace CakeDC\Users\Controller\Traits;
 use Cake\Core\Configure;
 use Cake\Http\Client;
 use Cake\Log\Log;
+use Cake\Network\Response;
 use \DateTime;
 
 /**
@@ -27,6 +28,7 @@ trait SmsKeyTrait
      * Handles sms key form
      * 
      * Calls LoginTrait::_afterIdentifyUser on sucess
+     * @return void
      */
     public function smskey()
     {
@@ -47,7 +49,7 @@ trait SmsKeyTrait
             }
 
             if ($this->request->data['smskey'] == $secret){
-                $user = $this->request->session()->read('Smskey.user');
+                $user = $this->request->getSession()->read('Smskey.user');
                 return $this->_afterIdentifyUser($user);
             }
 
@@ -61,7 +63,7 @@ trait SmsKeyTrait
      * Sends key to user
      *
      * @param Array $user user
-     * @return \Cake\Network\Response || booelan Redirects to login on failre
+     * @return Response|bool Redirects to login on failre
      */
     public function renewSmsKey($user)
     {
@@ -76,9 +78,9 @@ trait SmsKeyTrait
         }
         
         $number = $user['sms'];
-        $this->request->session()->write('Smskey.secret', $secret);
-        $this->request->session()->write('Smskey.user', $user);
-        $this->request->session()->write('Smskey.expire', $expire);
+        $this->request->getSession()->write('Smskey.secret', $secret);
+        $this->request->getSession()->write('Smskey.user', $user);
+        $this->request->getSession()->write('Smskey.expire', $expire);
         $appName = Configure::read('App.name');
         $sucess = $this->sendSms(
             $number, 

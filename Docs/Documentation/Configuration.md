@@ -8,6 +8,7 @@ For easier configuration, you can specify an array of config files to override t
 
 config/bootstrap.php
 ```
+// The following configuration setting must be set before loading the Users plugin
 Configure::write('Users.config', ['users']);
 Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
 Configure::write('Users.Social.login', true); //to enable social login
@@ -37,6 +38,13 @@ Configure::write('OAuth.providers.twitter.options.clientSecret', 'YOUR APP SECRE
 ```
 
 Or use the config override option when loading the plugin (see above)
+
+Additionally you will see you can configure two more keys for each provider:
+
+* linkSocialUri (default: /link-social/**provider**),
+* callbackLinkSocialUri(default: /callback-link-social/**provider**)
+
+Those keys are needed to link an existing user account to a third-party account. **Remember to add the callback to your thrid-party app** 
 
 Configuration for reCaptcha
 ---------------------

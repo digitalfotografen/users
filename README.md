@@ -1,7 +1,8 @@
 CakeDC Users Plugin
 ===================
 
-[![Bake Status](https://secure.travis-ci.org/CakeDC/users.png?branch=master)](http://travis-ci.org/CakeDC/users)
+[![Build Status](https://secure.travis-ci.org/CakeDC/users.png?branch=master)](http://travis-ci.org/CakeDC/users)
+[![Coverage Status](https://img.shields.io/codecov/c/gh/CakeDC/users.svg?style=flat-square)](https://codecov.io/gh/CakeDC/users)
 [![Downloads](https://poser.pugx.org/CakeDC/users/d/total.png)](https://packagist.org/packages/CakeDC/users)
 [![Latest Version](https://poser.pugx.org/CakeDC/users/v/stable.png)](https://packagist.org/packages/CakeDC/users)
 [![License](https://poser.pugx.org/CakeDC/users/license.svg)](https://packagist.org/packages/CakeDC/users)
@@ -11,7 +12,7 @@ Versions and branches
 
 | CakePHP | CakeDC Users Plugin | Tag   | Notes |
 | :-------------: | :------------------------: | :--:  | :---- |
-| ^3.4             | [master](https://github.com/cakedc/users/tree/master)                      | 5.2.0 | stable |
+| ^3.5             | [master](https://github.com/cakedc/users/tree/master)                      | 6.0.0 | stable |
 | ^3.5             | [develop](https://github.com/cakedc/users/tree/develop)                      | - | unstable |
 | 3.4             | [5.x](https://github.com/cakedc/users/tree/5.x)                      | 5.2.0 | stable |
 | 3.3             | [4.x](https://github.com/cakedc/users/tree/4.x)                      | 4.2.0 | stable |
