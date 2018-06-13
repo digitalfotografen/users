@@ -16,6 +16,7 @@ That it works out of the box doesn't mean it is thought to be used exactly like 
 * [SuperuserAuthorize](https://github.com/CakeDC/auth/blob/master/Docs/Documentation/SuperuserAuthorize.md)
 * [ApiKeyAuthenticate](https://github.com/CakeDC/auth/blob/master/Docs/Documentation/ApiKeyAuthenticate.md)
 * [SocialAuthenticate](Documentation/SocialAuthenticate.md)
+* [Google Authenticator](Documentation/Google-Two-Factor-Authenticator.md)
 * [UserHelper](Documentation/UserHelper.md)
 * [Events](Documentation/Events.md)
 * [Extending the Plugin](Documentation/Extending-the-Plugin.md)
