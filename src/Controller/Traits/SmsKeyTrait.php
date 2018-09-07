@@ -120,7 +120,8 @@ trait SmsKeyTrait
                 'username' => $config['api_username'],
                 'password' => $config['api_password'],
             ],
-            'type' => 'json'
+            'type' => 'json',
+            'ssl_verify_peer' => false
         ];
 
         if (!empty($config['Proxy'])) {
